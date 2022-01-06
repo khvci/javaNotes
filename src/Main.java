@@ -5,6 +5,7 @@ uppercase). Every line of code that runs in Java must be inside a class; */
 
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     private String pName; // private = restricted access, see encapsulation below.
@@ -272,7 +273,9 @@ public class Main {
             System.out.println();
         }
 
-        // ArrayList
+        System.out.println("--------------");
+
+        // ArrayList (import java.util.ArrayList)
 
         ArrayList<String> carsArrayList = new ArrayList<String>();
 
@@ -282,8 +285,33 @@ public class Main {
 
         System.out.println(carsArrayList);
 
+        int arrayListLength = carsArrayList.size();
+        System.out.println(arrayListLength); //prints 3, length of the array list.
 
+        carsArrayList.set(2, "Aston Martin"); // change index 2 element from Tesla to Aston Martin.
 
+        System.out.println(carsArrayList.get(2)); //prints third element of array list
+
+        carsArrayList.remove(0); //removes element in first index
+        System.out.println(carsArrayList);
+
+        Collections.sort(carsArrayList); //Another useful class in the java.util package is the Collections class,
+        // which include the sort() method for sorting lists alphabetically or numerically.
+
+        for (int i = 0; i < carsArrayList.size(); i++) {
+            System.out.println(carsArrayList.get(i)); //iterates through the elements of array list
+        }
+
+        for (String i:carsArrayList) {
+            System.out.println(i); //same iteration by using for-each loop style.
+        }
+
+        carsArrayList.clear(); //removes all elements
+
+        //Elements in an ArrayList are actually objects. In the examples above, we created elements (objects) of
+        // type "String". Remember that a String in Java is an object (not a primitive type). To use other types,
+        // such as int, you must specify an equivalent wrapper class: Integer. For other primitive types, use: Boolean
+        // for boolean, Character for char, Double for double, etc:
     }
 
     // In the example below, we created a static method, which means that it can be accessed without
