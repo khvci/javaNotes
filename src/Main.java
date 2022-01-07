@@ -6,6 +6,7 @@ uppercase). Every line of code that runs in Java must be inside a class; */
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class Main {
     private String pName; // private = restricted access, see encapsulation below.
@@ -209,7 +210,7 @@ public class Main {
         encapObject.setName("John"); // sets private pName value
         System.out.println(encapObject.getName());
 
-        // Arrays
+        // - Arrays -
 
         int[][] matrix = new int[4][4];
 
@@ -248,7 +249,7 @@ public class Main {
         }
         System.out.println(sum);
 
-        // for each
+        // - For Each -
 
         int[] list = {1,2,3,4,5,6};
 
@@ -275,7 +276,7 @@ public class Main {
 
         System.out.println("--------------");
 
-        // ArrayList (import java.util.ArrayList)
+        // - ArrayList - (import java.util.ArrayList)
 
         ArrayList<String> carsArrayList = new ArrayList<String>();
 
@@ -311,8 +312,37 @@ public class Main {
         //Elements in an ArrayList are actually objects. In the examples above, we created elements (objects) of
         // type "String". Remember that a String in Java is an object (not a primitive type). To use other types,
         // such as int, you must specify an equivalent wrapper class: Integer. For other primitive types, use: Boolean
-        // for boolean, Character for char, Double for double, etc:
-    }
+        // for boolean, Character for char, Double for double, etc.
+
+        System.out.println("--------------");
+
+        // - Hashmap - import java.util.HashMap
+
+        /* In the ArrayList chapter, you learned that Arrays store items as an ordered collection, and you have to
+        access them with an index number (int type). A HashMap however, store items in "key/value" pairs, and you can
+        access them by an index of another type (e.g. a String).
+         */
+
+        HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+        capitalCities.put("UK", "London"); //add new item
+        capitalCities.put("Germany", "Berlin");
+        capitalCities.put("Norway", "Oslo");
+        capitalCities.put("Turkey", "Ankara");
+
+        System.out.println(capitalCities);
+
+        int howManyCapitals = capitalCities.size(); //hashmap size
+        System.out.println(howManyCapitals); // prints 4
+
+        String capitalOfTurkey = capitalCities.get("Turkey"); //access an item
+        System.out.println(capitalOfTurkey); // prints "Ankara"
+
+        capitalCities.remove("Turkey"); //remove an item
+
+        capitalCities.clear(); //clear all items.
+
+    } // ***** outside of main method *****
 
     // In the example below, we created a static method, which means that it can be accessed without
     // creating an object of the class, unlike public methods which can only be accessed by objects:
