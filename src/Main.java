@@ -11,6 +11,7 @@ import java.util.HashMap;
 public class Main {
     private String pName; // private = restricted access, see encapsulation below.
     int attributeX; //Create a class attribute. See classes and objects down below.
+
     public Main() // Create a class constructor for the Main class
     {
         attributeX = 5; // Set the initial value for the class attribute x
@@ -96,11 +97,11 @@ public class Main {
 
         int digit = 5;
 
-        switch(digit) {
-            case 1,3,5,7,9:
+        switch (digit) {
+            case 1, 3, 5, 7, 9:
                 System.out.println("Odd");
                 break;
-            case 2,4,6,8:
+            case 2, 4, 6, 8:
                 System.out.println("Even");
                 break;
             default:
@@ -121,7 +122,7 @@ public class Main {
 
         String[] cars = {"Volvo", "Mercedes", "Audi"}; // this is an array.
 
-        for (String i: cars) { // this is called "for-each" loop. Iterates over an array.
+        for (String i : cars) { // this is called "for-each" loop. Iterates over an array.
             System.out.println(i);
         }
 
@@ -136,12 +137,12 @@ public class Main {
 
         // - Arrays -
 
-        int[] numArray = {10,20,30,40};
+        int[] numArray = {10, 20, 30, 40};
         System.out.println(numArray[0]); // prints first index of numArray
         numArray[1] = 25; // change an array element.
         System.out.println("numArray has " + numArray.length + " elements.");
 
-        int [][] myNumbers = { {1,2,3,4}, {5,6,7} }; // multi-dimensional array.
+        int[][] myNumbers = {{1, 2, 3, 4}, {5, 6, 7}}; // multi-dimensional array.
         System.out.println(myNumbers[1][1]); // prints 6
 
         for (int i = 0; i < myNumbers.length; i++) {
@@ -251,9 +252,9 @@ public class Main {
 
         // - For Each -
 
-        int[] list = {1,2,3,4,5,6};
+        int[] list = {1, 2, 3, 4, 5, 6};
 
-        for (int i: list) {
+        for (int i : list) {
             System.out.println(i);
         }
 
@@ -267,8 +268,8 @@ public class Main {
             }
         }
 
-        for (int[] row: matrix2) {
-            for (int col: row) {
+        for (int[] row : matrix2) {
+            for (int col : row) {
                 System.out.print(col + " ");
             }
             System.out.println();
@@ -303,7 +304,7 @@ public class Main {
             System.out.println(carsArrayList.get(i)); //iterates through the elements of array list
         }
 
-        for (String i:carsArrayList) {
+        for (String i : carsArrayList) {
             System.out.println(i); //same iteration by using for-each loop style.
         }
 
@@ -338,9 +339,22 @@ public class Main {
         String capitalOfTurkey = capitalCities.get("Turkey"); //access an item
         System.out.println(capitalOfTurkey); // prints "Ankara"
 
+        System.out.print("Keys are ");
+        for (String i : capitalCities.keySet()) {
+            System.out.print(i + " ");
+        } //iterates through the keys.
+        System.out.println(); //prints "Keys are Turkey Norway UK Germany"
+
+        System.out.print("Values are ");
+        for (String i : capitalCities.values()) {
+            System.out.print(i + " ");
+        } //iterates through the values.
+        System.out.println(); //prints "Values are Ankara Oslo London Berlin"
+
         capitalCities.remove("Turkey"); //remove an item
 
         capitalCities.clear(); //clear all items.
+
 
     } // ***** outside of main method *****
 
@@ -353,34 +367,29 @@ public class Main {
         System.out.println("Static methods can be accessed without creating an object of the class, unlike public");
     }
 
-    public void myPublicMethod()
-    {
+    public void myPublicMethod() {
         System.out.println("Public methods can only be accessed by objects.");
     }
 
     // - Method Parameters and Return -
 
-    static String doubleVariableMethod(String fname, int age)
-    {
+    static String doubleVariableMethod(String fname, int age) {
         return fname + " is " + age;
     }
 
     // - Method Overloading -
 
-    static int plusMethod(int a, int b)
-    {
+    static int plusMethod(int a, int b) {
         return a + b;
     }
 
-    static double plusMethod(double a, double b)
-    {
+    static double plusMethod(double a, double b) {
         return a + b;
     }
 
     // - Recursion -
 
-    static int sum(int a)
-    {
+    static int sum(int a) {
         if (a > 0) //halting condition to prevent infinite recursion
         {
             return a + sum(a - 1);
@@ -389,23 +398,20 @@ public class Main {
         }
     }
 
-    static int sum(int a, int b)
-    {
+    static int sum(int a, int b) {
         if (b > a) //halting condition to prevent infinite recursion
         {
-            return b + sum(a, b-1);
+            return b + sum(a, b - 1);
         } else {
             return b;
         }
     }
 
-    public void fullThrottle()
-    {
+    public void fullThrottle() {
         System.out.println("The car is going as fast as it can!");
     }
 
-    public void speed(int maxSpeed)
-    {
+    public void speed(int maxSpeed) {
         System.out.println("Max speed is: " + maxSpeed);
     }
 
