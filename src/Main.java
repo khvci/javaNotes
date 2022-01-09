@@ -330,6 +330,19 @@ public class Main {
 
         capitalCities.clear(); //clear all items.
 
+        System.out.println("--------------");
+
+        // - String Builder -
+
+        StringBuilder str1 = new StringBuilder();
+        str1.append("ABC");
+        str1.append('D');
+        System.out.println(str1);
+        System.out.println(str1.getClass().getSimpleName()); //prints type, StringBuilder
+
+        String str2 = str1.toString();
+        System.out.println(str2.getClass().getSimpleName()); // prints type, String
+
 
     } // ***** outside of main method *****
 
