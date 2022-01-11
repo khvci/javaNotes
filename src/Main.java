@@ -230,6 +230,23 @@ public class Main {
         }
         System.out.println(sum);
 
+        System.out.println("arr: " + Arrays.deepToString(arr)); //method to print array
+
+        int[] array2 = {3,5,4,2,1,0};
+        Arrays.sort(array2);
+        System.out.println(Arrays.toString(array2)); //prints [0, 1, 2, 3, 4, 5]
+
+        int indexOf4 = Arrays.binarySearch(array2, 4);
+        System.out.println("index of 4 is: " + indexOf4); //prints index of 4 is: 4
+
+        int[] array3 = Arrays.copyOf(array2, 3);
+        System.out.println(Arrays.toString(array3)); //prints [0, 1, 2]
+
+        int[] array4 = Arrays.copyOfRange(array2, 2, 5);
+        System.out.println(Arrays.toString(array4)); //prints [2, 3, 4]
+
+        System.out.println(Arrays.equals(array2, array3)); //prints false
+
         // - For Each -
 
         int[] list = {1, 2, 3, 4, 5, 6};
