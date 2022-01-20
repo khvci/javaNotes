@@ -396,6 +396,29 @@ public class Main {
         System.out.println(myOuter.x + myInner.y); //prints 15
         System.out.println("--------------");
 
+        // - Abstract Class and Methods -  Abstract class: is a restricted class that cannot be used to create
+        // objects (to access it, it must be inherited from another class). Abstract method: can only be used in an
+        // abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
+
+        abstract class Car {
+            abstract void carMake();
+            void startEngine() {
+                System.out.println("Wrooom Wroom!");
+            }
+        }
+
+        class Volvo extends Car {
+            void carMake() {
+                System.out.println("This is a Volvo!");
+            }
+        }
+
+        Volvo volvo = new Volvo();
+        volvo.carMake();
+        volvo.startEngine();
+
+        System.out.println("--------------");
+
     } // ***** outside of main method *****
 
     static class Animal {
