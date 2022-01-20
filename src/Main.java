@@ -359,9 +359,39 @@ public class Main {
 
         String str2 = str1.toString();
         System.out.println(str2.getClass().getSimpleName()); // prints type, String
+        System.out.println("--------------");
 
+        // - Polymorphism -
+
+        Animal myAnimal = new Animal();
+        Animal myPig = new Pig();
+
+        myAnimal.animalSound();
+        myPig.animalSound();
+
+
+        class Dog extends Animal {
+            public void animalSound() {
+                System.out.println("Dog says woof woof.");
+            }
+        }
+
+        Animal myDog = new Dog();
+        myDog.animalSound();
+        System.out.println("--------------");
 
     } // ***** outside of main method *****
+
+    static class Animal {
+        public void animalSound() {
+            System.out.println("The animal makes a sound.");
+        }
+    }
+    static class Pig extends Animal {
+        public void animalSound() {
+            System.out.println("The pig says wee wee");
+        }
+    }
 
     // In the example below, we created a static method, which means that it can be accessed without
     // creating an object of the class, unlike public methods which can only be accessed by objects:
