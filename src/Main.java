@@ -380,6 +380,22 @@ public class Main {
         myDog.animalSound();
         System.out.println("--------------");
 
+        // - Inner Class - The purpose of nested classes is to group classes that belong together,
+        // which makes your code more readable and maintainable.
+
+        class OuterClass {
+            int x = 10;
+            class InnerClass {
+                int y = 5;
+            }
+        }
+
+        OuterClass myOuter = new OuterClass();
+        OuterClass.InnerClass myInner = myOuter.new InnerClass();
+
+        System.out.println(myOuter.x + myInner.y); //prints 15
+        System.out.println("--------------");
+
     } // ***** outside of main method *****
 
     static class Animal {
