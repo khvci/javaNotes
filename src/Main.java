@@ -26,6 +26,7 @@ public class Main {
     // Everything in Java is associated with classes and objects, along with its attributes and methods.
     // The main() method is required, and you will see it in every Java program:
     public static void main(String[] args) {
+        long startTime = System.nanoTime();
         System.out.println("Hello World");
 
         /* Save the code in Notepad as "Main.java". Open Command Prompt, navigate to the directory where you
@@ -435,7 +436,10 @@ public class Main {
         System.out.println("After formatting: " + formattedDate);
 
         System.out.println("--------------");
-        
+
+        long endTime = System.nanoTime();
+        System.out.println("Total execution time is " + ((endTime - startTime)/1000000) + " ms.");
+
     } // ***** outside of main method *****
 
     static class Animal {
