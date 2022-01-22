@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.date.LocalDate;
 
 public class Main {
     private String pName; // private = restricted access, see encapsulation below.
@@ -418,6 +419,9 @@ public class Main {
         volvo.startEngine();
 
         System.out.println("--------------");
+
+        LocalDate dateObject = LocalDate.now();
+        System.out.println(dateObject);
 
     } // ***** outside of main method *****
 
