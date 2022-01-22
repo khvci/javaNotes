@@ -3,11 +3,12 @@
 In Java, every application begins with a class name, and that class must match the filename (first letter should be
 uppercase). Every line of code that runs in Java must be inside a class; */
 
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.date.LocalDate;
+import java.time.*;
 
 public class Main {
     private String pName; // private = restricted access, see encapsulation below.
@@ -423,6 +424,18 @@ public class Main {
         LocalDate dateObject = LocalDate.now();
         System.out.println(dateObject);
 
+        LocalTime timeObject = LocalTime.now();
+        System.out.println(timeObject);
+
+        LocalDateTime dateAndTime = LocalDateTime.now();
+        System.out.println("Before formatting: " + dateAndTime);
+
+        DateTimeFormatter formatterObject = DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm:ss");
+        String formattedDate = dateAndTime.format(formatterObject);
+        System.out.println("After formatting: " + formattedDate);
+
+        System.out.println("--------------");
+        
     } // ***** outside of main method *****
 
     static class Animal {
