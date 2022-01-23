@@ -4,10 +4,7 @@ In Java, every application begins with a class name, and that class must match t
 uppercase). Every line of code that runs in Java must be inside a class; */
 
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 import java.time.*;
 
 public class Main {
@@ -434,6 +431,32 @@ public class Main {
         DateTimeFormatter formatterObject = DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm:ss");
         String formattedDate = dateAndTime.format(formatterObject);
         System.out.println("After formatting: " + formattedDate);
+
+        System.out.println("--------------");
+
+        // - HashSet - (No Duplicate İtems)
+        HashSet<String> carsHashSet = new HashSet<String>();
+        carsHashSet.add("Volvo");
+        carsHashSet.add("Mazda");
+        carsHashSet.add("Mazda"); // can't be added, elements must be unique.
+        System.out.println(carsHashSet.size()); //prints 2
+
+        String carToCheck = "Volvo";
+
+        if (carsHashSet.contains(carToCheck)) {
+            System.out.println(carToCheck + " is in this HashSet.");
+        }
+        System.out.println("Hashset: " + carsHashSet); // prints [Volvo, Mazda]
+
+        for (String i : carsHashSet) {
+            System.out.println(i);
+        }
+
+        carsHashSet.remove("Mazda");
+        System.out.println(carsHashSet); // prints [Volvo]
+
+        carsHashSet.clear(); // removes everthing in hashset
+        System.out.println(carsHashSet); // prints []
 
         System.out.println("--------------");
 
