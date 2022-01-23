@@ -460,6 +460,29 @@ public class Main {
 
         System.out.println("--------------");
 
+        // - Java Iterator -
+
+        ArrayList numbersArrayList = new ArrayList();
+        numbersArrayList.add(5);
+        numbersArrayList.add(11);
+        numbersArrayList.add(-1);
+        numbersArrayList.add(17);
+
+        System.out.println("numberArrayList: " + numbersArrayList);
+
+        Iterator<Integer> iterator = numbersArrayList.iterator();
+
+        while (iterator.hasNext()) {
+            Integer i = iterator.next();
+             if (i < 10) {
+                 iterator.remove();
+             }
+        }
+        
+        System.out.println("After iteration: " + numbersArrayList);
+
+        System.out.println("--------------");
+
         long endTime = System.nanoTime();
         System.out.println("Total execution time is " + ((endTime - startTime)/1000000) + " ms.");
 
