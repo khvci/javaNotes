@@ -232,7 +232,7 @@ public class Main {
 
         System.out.println("arr: " + Arrays.deepToString(arr)); //method to print array
 
-        int[] array2 = {3,5,4,2,1,0};
+        int[] array2 = {3, 5, 4, 2, 1, 0};
         Arrays.sort(array2);
         System.out.println(Arrays.toString(array2)); //prints [0, 1, 2, 3, 4, 5]
 
@@ -385,6 +385,7 @@ public class Main {
 
         class OuterClass {
             int x = 10;
+
             class InnerClass {
                 int y = 5;
             }
@@ -402,6 +403,7 @@ public class Main {
 
         abstract class Car {
             abstract void carMake();
+
             void startEngine() {
                 System.out.println("Wrooom Wroom!");
             }
@@ -423,13 +425,15 @@ public class Main {
 
         interface IAnimal {
             public void makesSound();
+
             public void sleep();
         }
 
-        class PinkPig implements IAnimal{
+        class PinkPig implements IAnimal {
             public void makesSound() {
                 System.out.println("Hoink Hoink!");
             }
+
             public void sleep() {
                 System.out.println("ZzZz");
             }
@@ -496,22 +500,39 @@ public class Main {
 
         while (iterator.hasNext()) {
             Integer i = iterator.next();
-             if (i < 10) {
-                 iterator.remove();
-             }
+            if (i < 10) {
+                iterator.remove();
+            }
         }
-        
+
         System.out.println("After iteration: " + numbersArrayList);
 
         System.out.println("--------------");
 
+        // - Wrapper Classes -
+
+        String stringNumber = "100";
+        int intNumber = 100;
+
+        Integer integerNumber = (Integer) intNumber; // Integer is wrapper class, it's an object, not a primitive type like int.
+        String newStringNumber = integerNumber.toString(); // Object needs to be converted to string
+
+        System.out.println(newStringNumber.equals(stringNumber) ? "yes" : "no");
+
+        System.out.println(integerNumber); // prints 100
+
+        integerNumber += 50;
+        System.out.println(integerNumber); // prints 150
+
+        int newIntNum = 50;
+        integerNumber += newIntNum; // valid. Integer and int can be used like this.
+        System.out.println(integerNumber); // prints 200
 
 
         long endTime = System.nanoTime();
-        System.out.println("\nTotal execution time is " + ((endTime - startTime)/1000000) + " ms.");
+        System.out.println("\nTotal execution time is " + ((endTime - startTime) / 1000000) + " ms.");
 
     } // ***** outside of main method *****
-
 
 
     static class Animal {
@@ -519,6 +540,7 @@ public class Main {
             System.out.println("The animal makes a sound.");
         }
     }
+
     static class Pig extends Animal {
         public void animalSound() {
             System.out.println("The pig says wee wee");
