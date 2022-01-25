@@ -483,10 +483,32 @@ public class Main {
 
         System.out.println("--------------");
 
+        // - Interface -
+
+        interface IAnimal {
+            public void makesSound();
+            public void sleep();
+        }
+
+        class PinkPig implements IAnimal{
+            public void makesSound() {
+                System.out.println("Hoink Hoink!");
+            }
+            public void sleep() {
+                System.out.println("ZzZz");
+            }
+        }
+
+        PinkPig pinky = new PinkPig();
+        pinky.makesSound();
+        pinky.sleep();
+
         long endTime = System.nanoTime();
         System.out.println("Total execution time is " + ((endTime - startTime)/1000000) + " ms.");
 
     } // ***** outside of main method *****
+
+
 
     static class Animal {
         public void animalSound() {
