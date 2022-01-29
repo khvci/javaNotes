@@ -528,6 +528,21 @@ public class Main {
         integerNumber += newIntNum; // valid. Integer and int can be used like this.
         System.out.println(integerNumber); // prints 200
 
+        System.out.println("--------------");
+
+        // - Lambda Expressions -
+
+        ArrayList countDown = new ArrayList();
+        countDown.add(5);
+        countDown.add(4);
+        countDown.add(3);
+        countDown.add(2);
+        countDown.add(1);
+        countDown.add(0);
+        System.out.print("Countdown: ");
+        countDown.forEach((i) -> System.out.print(i + " "));
+
+        System.out.println("\n--------------");
 
         long endTime = System.nanoTime();
         System.out.println("\nTotal execution time is " + ((endTime - startTime) / 1000000) + " ms.");
