@@ -6,6 +6,7 @@ uppercase). Every line of code that runs in Java must be inside a class; */
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.time.*;
+import java.util.function.Consumer;
 
 public class Main {
     private String pName; // private = restricted access, see encapsulation below.
@@ -542,13 +543,18 @@ public class Main {
         System.out.print("Countdown: ");
         countDown.forEach((i) -> System.out.print(i + " "));
 
+        // - Consumer Interface - Use Java's Consumer interface to store a lambda expression in a variable:
+
+        Consumer<Integer> printWithLambdaMethod = (i) -> System.out.print(i + " ");
+        System.out.print("\nCountdown with lambda: ");
+        countDown.forEach(printWithLambdaMethod);
+
         System.out.println("\n--------------");
 
         long endTime = System.nanoTime();
         System.out.println("\nTotal execution time is " + ((endTime - startTime) / 1000000) + " ms.");
 
     } // ***** outside of main method *****
-
 
     static class Animal {
         public void animalSound() {
