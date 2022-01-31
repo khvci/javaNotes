@@ -7,6 +7,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.time.*;
 import java.util.function.Consumer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
     private String pName; // private = restricted access, see encapsulation below.
@@ -550,6 +552,14 @@ public class Main {
         countDown.forEach(printWithLambdaMethod);
 
         System.out.println("\n--------------");
+
+        // - Regular Expressions, a.k.a. Regex -
+
+        Pattern pattern = Pattern.compile("Some Words to Search", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher("This is a sentence that contains some words to search.");
+        boolean matchFound = matcher.find();
+
+        System.out.println(matchFound? "Match found by regex: \"" + pattern + "\"" : "No match here.");
 
         long endTime = System.nanoTime();
         System.out.println("\nTotal execution time is " + ((endTime - startTime) / 1000000) + " ms.");
