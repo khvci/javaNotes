@@ -27,3 +27,6 @@ hs_err_pid*
 
 #operating system
 *.DS_Store
+
+#other
+*.iml
